@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+  <meta charset="UTF-8">
+  <title>סטטוס מפעל</title>
+  <style>
+    body { font-family: sans-serif; direction: rtl; padding: 20px; }
+    button { margin: 10px; padding: 10px 20px; font-size: 16px; }
+    ul { padding-right: 0; list-style: none; }
+    li { margin-bottom: 5px; }
+  </style>
+</head>
+<body>
+  <h1>ניהול סטטוס מפעל</h1>
+  <button onclick="addEntry('הפעל')">המפעל הופעל</button>
+  <button onclick="addEntry('כיבוי')">המפעל נכבה</button>
+
+  <h2>היסטוריית פעולות:</h2>
+  <ul id="log"></ul>
+
+  <script>
+    function addEntry(action) {
+      const log = document.getElementById("log");
+      const now = new Date().toLocaleString("he-IL");
+      const text = `המפעל ${action === 'הפעל' ? 'הופעל' : 'נכבה'} ב־${now}`;
+      const li = document.createElement("li");
+      li.textContent = text;
+      log.prepend(li);
+    }
+  </script>
+</body>
+</html>
+first upload
